@@ -1,6 +1,6 @@
-directory.setLoginListener('customLogin',"Admin");
-directory.setLoginListener('customLogin',"Organisation");
-directory.setLoginListener('customLogin',"User");
+directory.setLoginListener('userLogin',"Admin");
+directory.setLoginListener('userLogin',"Organisation");
+directory.setLoginListener('userLogin',"User");
 addHttpRequestHandler(
 '/importPersonal', 
 'Modules/import.js', 
