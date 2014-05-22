@@ -1,8 +1,1 @@
-﻿<?xml version="1.0" encoding="UTF-8"?><directory>
-	<group ID="01000000000000000000000000000000" name="Admin">	</group>
-	<group ID="5420E158B1A4C84E83BF2B82852CF120" name="Administrator">
-		<include group="Admin" groupID="01000000000000000000000000000000"/>
-	</group>
-	<group ID="49ECFB537D56BB49A6CB9EE077275FB4" name="Organisation"/>
-	<group ID="15E2C7116378CB429169C605757BD609" name="Mobile"/>
-</directory>
+﻿<?xml version="1.0" encoding="UTF-8"?><directory>	<group ID="01000000000000000000000000000000" name="Admin">		<include user="test" ID="82D78F1523764B3E9D4AD0AD70106931"/>	</group>	<group ID="5420E158B1A4C84E83BF2B82852CF120" name="Administrator">		<include group="Admin" groupID="01000000000000000000000000000000"/>	</group>	<group ID="49ECFB537D56BB49A6CB9EE077275FB4" name="Organisation"/>	<group ID="15E2C7116378CB429169C605757BD609" name="Mobile"/>	<user ID="82D78F1523764B3E9D4AD0AD70106931" name="test" fullName="Test Admin" password="55ea11aa107a8be7cce713a70103bc1e"/></directory>
