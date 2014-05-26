@@ -2,6 +2,10 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var textField6 = {};	// @textField
+	var button2 = {};	// @button
+	var button3 = {};	// @button
+	var button4 = {};	// @button
 	var textField8 = {};	// @textField
 	var button12 = {};	// @button
 	var button10 = {};	// @button
@@ -14,6 +18,29 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	textField6.keydown = function textField6_keydown (event)// @startlock
+	{// @endlock
+		if(event.keyCode == 9)
+		{
+			$$("container4").show();
+		}
+	};// @lock
+
+	button2.click = function button2_click (event)// @startlock
+	{// @endlock
+		$$("container4").hide();
+	};// @lock
+
+	button3.click = function button3_click (event)// @startlock
+	{// @endlock
+		$$("container4").hide();
+	};// @lock
+
+	button4.click = function button4_click (event)// @startlock
+	{// @endlock
+		$$("textField4").setState("focus");
+	};// @lock
 
 	textField8.keyup = function textField8_keyup (event)// @startlock
 	{// @endlock
@@ -131,6 +158,10 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("textField6", "keydown", textField6.keydown, "WAF");
+	WAF.addListener("button2", "click", button2.click, "WAF");
+	WAF.addListener("button3", "click", button3.click, "WAF");
+	WAF.addListener("button4", "click", button4.click, "WAF");
 	WAF.addListener("textField8", "keyup", textField8.keyup, "WAF");
 	WAF.addListener("button12", "click", button12.click, "WAF");
 	WAF.addListener("button10", "click", button10.click, "WAF");
