@@ -24,6 +24,13 @@ model.Member.events.onSave = function() {
 
 
 model.Member.events.onRemove = function() {
+	
 	var card = ds.Card.find("memberPhone ==:1 AND organName ==:2",this.phone,this.orgName);
 	card.remove();
+	
+	var theComp = ds.Organisation.find("name = :1", this.orgName);
+	
+	theComp.currMebmers = theComp.currMebmers-1;
+         theComp.save();
+	
 };

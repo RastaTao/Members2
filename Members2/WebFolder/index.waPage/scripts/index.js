@@ -44,6 +44,35 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			$$("passInput").setValue("");
 		
 		}
+		
+		if(event.keyCode == 13)
+		{
+			var theUser = $$("userInput").getValue();
+			var thePass = $$("passInput").getValue();
+		if(WAF.directory.loginByPassword(theUser, thePass))
+		{
+//			$$("loginContainer").hide();
+//			$$("containerBody").show();
+			
+			
+			
+			if (WAF.directory.currentUserBelongsTo("Administrator")) {
+				window.location = "/panel"
+			} else if (WAF.directory.currentUserBelongsTo("Organisation")) {
+				window.location = "/organisation"
+			}
+
+			
+			//alert(session.belongsTo());
+			
+//			$$("welcomeText").setValue("Welcome to administration page, "+session.fullName+"!");
+			
+		}
+		else {
+			alert("Login failed");
+			  }
+		}
+		
 	};// @lock
 
 	userInput.keydown = function userInput_keydown (event)// @startlock
