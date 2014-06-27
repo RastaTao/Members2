@@ -38,3 +38,8 @@ model.Organisation.events.onRemove = function() {
 };
 	
 };
+
+
+model.Organisation.events.onInit = function() {
+	this.currMembers = 0
+	};

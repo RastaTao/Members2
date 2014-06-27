@@ -2,6 +2,7 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var imageButton1 = {};	// @buttonImage
 	var idQueryString = {};	// @textField
 	var cancel = {};	// @buttonImage
 	var saveButton3 = {};	// @buttonImage
@@ -15,6 +16,19 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	imageButton1.click = function imageButton1_click (event)// @startlock
+	{// @endlock
+		$$("addButton").disable();
+		$$("changeButton").disable();
+		
+		$$("saveButton2").show();
+		$$("modifyButton").hide();
+		$("#textField2").prop("readonly",false);
+		$("#textField3").prop("readonly",false);
+		$("#textField4").prop("readonly",false);
+		$("#textField5").prop("readonly",false);
+	};// @lock
 
 	idQueryString.keyup = function idQueryString_keyup (event)// @startlock
 	{// @endlock
@@ -227,6 +241,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("imageButton1", "click", imageButton1.click, "WAF");
 	WAF.addListener("idQueryString", "keyup", idQueryString.keyup, "WAF");
 	WAF.addListener("cancel", "click", cancel.click, "WAF");
 	WAF.addListener("saveButton3", "click", saveButton3.click, "WAF");
